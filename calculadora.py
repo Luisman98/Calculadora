@@ -9,7 +9,7 @@ while exit != 1:
         opcion = int(input("Eliga el valor correspondiente a la opcion deseada=>"))
     except ValueError:
         print("Valor incorrecto")
-
+        continue
     #Si la opcion es 1
     if opcion == 1:
         salir_suma = int
@@ -27,6 +27,9 @@ while exit != 1:
                 print("Valor incorrecto")
     #si la opcion es 5, sale del programa
     if opcion == 5:
+        break
+
+    else:
         break
 
     #aqui finaliza en programa y pregunta si desea repetir el programa
