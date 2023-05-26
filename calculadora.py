@@ -8,7 +8,7 @@ while exit != 1:
     try:
         opcion = int(input("Eliga el valor correspondiente a la opcion deseada=>"))
     except ValueError:
-        print("Valor incorrecto")
+        print("==>Valor incorrecto<==")
         continue
 
     #Si la opcion es 1 entra en la suma
@@ -29,16 +29,18 @@ while exit != 1:
                             result_suma = result_suma + num3_suma
                             print("RESULTADO=>",result_suma)
                         salir_suma = int(input("Desea salir de la suma?: \n 1-Si \n 2-No \n =>"))
+                        if salir_suma == 1:
+                            opcion_user = 2
                     except ValueError:
-                        print("Valor incorrecto")
+                        print("==>Valor incorrecto<==")
                         opcion_user = 0
                         continue
             except ValueError:
-                print("Valor incorrecto")
+                print("==>Valor incorrecto<==")
                 continue
 
     #Si la opcion es 2 entra en la resta
-    if opcion == 2:
+    elif opcion == 2:
         salir_resta = int
         while salir_resta != 1:
             try:
@@ -55,21 +57,54 @@ while exit != 1:
                             result_resta = result_resta - num3_resta
                             print("RESULTADO=>",result_resta)
                         salir_resta = int(input("Desea salir de la resta?: \n 1-Si \n 2-No \n =>"))
+                        if salir_resta == 1:
+                            opcion_user = 2
                     except ValueError:
-                        print("Valor incorrecto")
+                        print("==>Valor incorrecto<==")
                         opcion_user = 0
                         continue
             except ValueError:
-                print("Valor incorrecto")
+                print("==>Valor incorrecto<==")
+                continue
+
+    #Si la opcion es 3 entra en la multiplicacion
+    elif opcion == 3:
+        salir_multi = int
+        while salir_multi != 1:
+            try:        
+                num1_multi = int(input("Ingrese un numero:=>"))
+                num2_multi = int(input("Ingrese la cantidad que desea multiplicar:=>"))
+                result_multi = num1_multi * num2_multi
+                print("RESULTADO=>",result_multi)
+                opcion_user = 0
+                while opcion_user != 2:
+                    try:
+                        opcion_user = int(input("Desea agregar otro numero para multiplicar?: \n 1-Si \n 2-No \n =>"))
+                        if opcion_user == 1:
+                            num3_multi = int(input("Ingrese un numero a multiplicar:=>"))
+                            result_multi = result_multi * num3_multi
+                            print("RESULTADO=>",result_multi)
+                        salir_multi = int(input("Desea salir de la multiplicacion?: \n 1-Si \n 2-No \n =>"))
+                        if salir_multi == 1:
+                            opcion_user = 2
+                    except ValueError:
+                        print("==>Valor incorrecto<==")
+                        opcion_user = 0
+                        continue
+            except ValueError:
+                print("==>Valor incorrecto<==")
                 continue
 
     #si la opcion es 5, sale del programa
     if opcion == 5:
         break
 
+    else:
+        continue
+
     #aqui finaliza en programa y pregunta si desea repetir el programa
     try:
         exit = int(input("Desea salir del programa?: \n 1-Si \n 2-No \n=>"))
     except ValueError:
-        print("Valor incorrecto")
+        print("==>Valor incorrecto<==")
         continue
